@@ -1,0 +1,60 @@
+物理叙述（Statements in Physics）命名分类规则及原则：
+
+笔记中对于常用术语命名及解释，如XX定律，XX现象，XX基础物理情景等，使用如下分类：
+1. Postulate
+2. Terminology
+3. Principle
+4. Fact
+5. Result
+
+同时，对于数学部分，使用常规命名规则：
+1. Axiom
+2. Definition
+3. Theorem
+4. Proposition
+5. Lemma
+6. Corollary
+7. Conjecture
+
+原则上，物理部分的叙述命名不与数学的叙述命名混用。
+
+一、数学叙述命名原则
+
+1.1 Axiom
+    An axiom or postulate is a fundamental assumption regarding the object of study, that is accepted without proof. A related concept is that of a definition, which gives the meaning of a word or a phrase in terms of known concepts. 
+
+1.2 Definition
+    A definition gives the meaning of a word or a phrase in terms of known concepts.
+
+1.3 Theorem
+    A theorem is a statement that has been proven to be true based on axioms or definitions, and other theorems.
+
+1.4 Proposition
+    A proposition is a theorem of lesser importance, or one that is considered so elementary or immediately obvious, that it may be stated without proof.
+
+1.5 Lemma
+    A lemma is an "accessory proposition" – a proposition with little applicability outside its use in a particular proof. Over time a lemma may gain in importance and be considered a theorem, though the term "lemma" is usually kept as part of its name.
+
+1.6 Corollary
+    A corollary is a proposition that follows immediately from another theorem or axiom, with little or no required proof. A corollary may also be a restatement of a theorem in a simpler form, or for a special case.
+
+二、物理叙述命名原则
+
+2.1 Postulates（公设）
+    Postulates 在物理笔记中的使用情况应对标Axiom在数学中的使用情况；如“量子力学五大公设”
+
+2.2 Terminology
+    Terminology 在物理笔记中的使用情况应对标Definition在数学中的使用情况；任何物理专有名词的定义应使用Terminology，与Definition在数学中的使用区分开来。
+
+2.3 Principle
+    Principle 在物理笔记中的使用情况在一定程度上可以对标 Theorem 在数学中的使用情况：任何根本性的原理，并且被广泛使用于物理量的计算，应被列在 Principle 下。然而，和 Theorem 在数学中不一样的是，Principle 的物理结论基本应来自于实验结果的总结，一般不需要证明；与之相对的，Theorem 可以直接或间接的来自于 Definition 的证明。
+
+    如”麦克斯韦方程组“应被列在 Principle 下；”连续性方程“应被列在 Principle 下。
+
+2.4 Fact
+    Fact 在物理笔记中的使用情况应对标于 Proposition、Lemma、或 Corollary 在数学中的使用情况：（类比Lemma）可以从一个 Principle 中推导，且通常情况下为推导出另一条 Principle 的中间结论，但是不常被直接应用于物理量的计算的结论；或（类比Proposition）结论通常也可以来自于实验的总结，但是没有 Principle 使用广泛，且可以从 Principle 中推导出来；或（类比Corollary）可以很快从 Principle 中推导出来，应被列在 Fact 下。
+
+    如“Matching condition of potentials” 之于 “Matching condition of fields”
+
+2.5 Results
+    Results 应为具体物理实例的物理量（函数）；如电荷均匀分布在一个空心球的电场。

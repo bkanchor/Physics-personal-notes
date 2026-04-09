@@ -1,0 +1,536 @@
+% Mathematics and Physics statements
+%
+% The following boxes are provided:
+%   Mathematical statements:
+%   Axiom:          \axiomr{name}{axiom:reference label}{statement}
+%   Definition:     \defnr{name}{defn:reference label}{statement}
+%   Theorem:        \thmr{name}{thm:reference label}{statement}}
+%   Proposition:    \proppfr{name}{prop:reference label}{statement}{proof}
+%   Lemma:          \lempfr{name}{lem:reference label}{statement}{proof}
+%   Corollary:      \corpfr{name}{cor:reference label}{statement}{proof}
+%   Conjecture:     \conjr{name}{conj:reference label}{statement}
+
+%   Physics statements:
+%   Postulate:      \postr{name}{post:reference label}{statement}
+%   Terminology:    \tmgr{name}{tmg:reference label}{statement}
+%   Principle:      \prr{name}{pr:reference label}{statement}
+%   Fact:           \factpfr{name}{fact:reference label}{statement}{proof}
+%   Result:         \respfr{name}{res:reference label}{statement}{proof}
+
+
+%   Notations
+%   Note:           \nt{statement}
+
+%-------------------------------Mathematical statements---------------------------------
+
+%Axiom
+\newtcbtheorem[number within=section]{myaxiom}{Axiom}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=gray!20!white,
+    colback=gray!10!white,
+}{axiom}
+
+\NewDocumentCommand{\axiom}{m+m}{
+    \begin{myaxiom}{#1}{}
+        #2
+    \end{myaxiom}
+}
+
+\NewDocumentCommand{\axiomr}{mm+m}{
+    \begin{myaxiom}{#1}{#2}
+        #3
+    \end{myaxiom}
+}
+
+% Definition
+\newtcbtheorem[use counter from=myaxiom]{mydefinition}{Definition}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=red!20!white,
+    colback=red!10!white,
+}{defn}
+
+\NewDocumentCommand{\defn}{m+m}{
+    \begin{mydefinition}{#1}{}
+        #2
+    \end{mydefinition}
+}
+
+\NewDocumentCommand{\defnr}{mm+m}{
+    \begin{mydefinition}{#1}{#2}
+        #3
+    \end{mydefinition}
+}
+
+% Theorem
+\newtcbtheorem[use counter from=myaxiom]{mytheorem}{Theorem}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=cyan!20!white,
+    colback=cyan!10!white,
+}{thm}
+
+\NewDocumentCommand{\thm}{m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+}
+
+\NewDocumentCommand{\thmr}{mm+m}{
+    \begin{mytheorem}{#1}{#2}
+        #3
+    \end{mytheorem}
+}
+
+\newenvironment{theoremproof}{
+    {\noindent{\it \textbf{proof of the theorem.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{cyan!20!white}]
+}{
+    \textcolor{cyan!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\thmpf}{m+m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+
+    \begin{theoremproof}
+        #3
+    \end{theoremproof}
+}
+
+\NewDocumentCommand{\thmpfr}{mm+m+m}{
+    \begin{mytheorem}{#1}{#2}
+        #3
+    \end{mytheorem}
+
+    \begin{theoremproof}
+        #4
+    \end{theoremproof}
+}
+
+% Proposition
+\newtcbtheorem[use counter from=myaxiom]{myproposition}{Proposition}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=blue!15!white,
+    colback=blue!10!white,
+}{prop}
+
+\NewDocumentCommand{\prop}{m+m}{
+    \begin{myproposition}{#1}{}
+        #2
+    \end{myproposition}
+}
+
+\NewDocumentCommand{\propr}{mm+m}{
+    \begin{myproposition}{#1}{#2}
+        #3
+    \end{myproposition}
+}
+
+\newenvironment{propositionproof}{
+    {\noindent{\it \textbf{proof of the proposition.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{blue!15!white}]
+}{
+    \textcolor{blue!15!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\proppf}{m+m+m}{
+    \begin{myproposition}{#1}{}
+        #2
+    \end{myproposition}
+
+    \begin{propositionproof}
+        #3
+    \end{propositionproof}
+}
+
+\NewDocumentCommand{\proppfr}{mm+m+m}{
+    \begin{myproposition}{#1}{#2}
+        #3
+    \end{myproposition}
+
+    \begin{propositionproof}
+        #4
+    \end{propositionproof}
+}
+
+% Lemma
+\newtcbtheorem[use counter from=myaxiom]{mylemma}{Lemma}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=green!20!white,
+    colback=green!10!white,
+}{lem}
+
+\NewDocumentCommand{\lem}{m+m}{
+    \begin{mylemma}{#1}{}
+        #2
+    \end{mylemma}
+}
+
+\NewDocumentCommand{\lemr}{mm+m}{
+    \begin{mylemma}{#1}{#2}
+        #3
+    \end{mylemma}
+}
+
+\newenvironment{lemmaproof}{
+    {\noindent{\it \textbf{proof of the lemma.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{green!20!white}]
+}{
+    \textcolor{green!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\lempf}{m+m+m}{
+    \begin{mylemma}{#1}{}
+        #2
+    \end{mylemma}
+
+    \begin{lemmaproof}
+        #3
+    \end{lemmaproof}
+}
+
+\NewDocumentCommand{\lempfr}{mm+m+m}{
+    \begin{mylemma}{#1}{#2}
+        #3
+    \end{mylemma}
+
+    \begin{lemmaproof}
+        #4
+    \end{lemmaproof}
+}
+
+% Corollary
+\newtcbtheorem[use counter from=myaxiom]{mycorollary}{Corollary}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=cyan!15!white,
+    colback=cyan!10!white,
+}{cor}
+
+\NewDocumentCommand{\cor}{m+m}{
+    \begin{mycorollary}{#1}{}
+        #2
+    \end{mycorollary}
+}
+
+\NewDocumentCommand{\corr}{mm+m}{
+    \begin{mycorollary}{#1}{#2}
+        #3
+    \end{mycorollary}
+}
+
+\newenvironment{corollaryproof}{
+    {\noindent{\it \textbf{proof of the corollary.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{cyan!15!white}]
+}{
+    \textcolor{cyan!15!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\corpf}{m+m+m}{
+    \begin{mycorollary}{#1}{}
+        #2
+    \end{mycorollary}
+
+    \begin{corollaryproof}
+        #3
+    \end{corollaryproof}
+}
+
+\NewDocumentCommand{\corpfr}{mm+m+m}{
+    \begin{mycorollary}{#1}{#2}
+        #3
+    \end{mycorollary}
+
+    \begin{corollaryproof}
+        #4
+    \end{corollaryproof}
+}
+
+% Conjecture
+\newtcbtheorem[use counter from=myaxiom]{myconjecture}{Conjecture}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=yellow!20!white,
+    colback=yellow!10!white,
+}{conj}
+
+\NewDocumentCommand{\conj}{m+m}{
+    \begin{myconjecture}{#1}{}
+        #2
+    \end{myconjecture}
+}
+
+\NewDocumentCommand{\conjr}{mm+m}{
+    \begin{myconjecture}{#1}{#2}
+        #3
+    \end{myconjecture}
+}
+
+%-------------------------------Physics statements---------------------------------
+% Postulate
+\newtcbtheorem[use counter from=myaxiom]{mypostulate}{Postulate}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=violet!20!white,
+    colback=violet!10!white,
+}{post}
+
+\NewDocumentCommand{\post}{m+m}{
+    \begin{mypostulate}{#1}{}
+        #2
+    \end{mypostulate}
+}
+
+\NewDocumentCommand{\postr}{mm+m}{
+    \begin{mypostulate}{#1}{#2}
+        #3
+    \end{mypostulate}
+}
+
+% Terminology
+\newtcbtheorem[use counter from=myaxiom]{myterminology}{Terminology}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=pink!50!white,
+    colback=pink!25!white,
+}{tmg}
+
+\NewDocumentCommand{\tmg}{m+m}{
+    \begin{myterminology}{#1}{}
+        #2
+    \end{myterminology}
+}
+
+\NewDocumentCommand{\tmgr}{mm+m+m}{
+    \begin{myterminology}{#1}{#2}
+        #3
+    \end{myterminology}
+}
+
+% Principle
+\newtcbtheorem[use counter from=myaxiom]{myprinciple}{Principle}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=teal!23!white,
+    colback=teal!10!white,
+}{pr}
+
+\NewDocumentCommand{\pr}{m+m}{
+    \begin{myprinciple}{#1}{}
+        #2
+    \end{myprinciple}
+}
+
+\NewDocumentCommand{\prr}{mm+m}{
+    \begin{myprinciple}{#1}{#2}
+        #3
+    \end{myprinciple}
+}
+
+% Fact
+\newtcbtheorem[use counter from=myaxiom]{myfact}{Fact}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=lime!25!white,
+    colback=lime!11!white,
+}{fact}
+
+\NewDocumentCommand{\fact}{m+m}{
+    \begin{myfact}{#1}{}
+        #2
+    \end{myfact}
+}
+
+\NewDocumentCommand{\factr}{mm+m}{
+    \begin{myfact}{#1}{#2}
+        #3
+    \end{myfact}
+}
+
+\newenvironment{factproof}{
+    {\noindent{\it \textbf{proof of the fact.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{lime!25!white}]
+}{
+    \textcolor{lime!25!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\factpf}{m+m+m}{
+    \begin{myfact}{#1}{}
+        #2
+    \end{myfact}
+
+    \begin{factproof}
+        #3
+    \end{factproof}
+}
+
+\NewDocumentCommand{\factpfr}{mm+m+m}{
+    \begin{myfact}{#1}{#2}
+        #3
+    \end{myfact}
+
+    \begin{factproof}
+        #4
+    \end{factproof}
+}
+
+% Result
+\newtcbtheorem[use counter from=myaxiom]{myresult}{Result}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=orange!20!white,
+    colback=orange!10!white,
+}{res}
+
+\NewDocumentCommand{\res}{m+m}{
+    \begin{myresult}{#1}{}
+        #2
+    \end{myresult}
+}
+
+\newenvironment{respf}{
+    {\noindent{\it \textbf{Solution.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{orange!20!white}]
+}{
+    \textcolor{orange!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\resp}{m+m+m}{
+    \begin{myresult}{#1}{}
+        #2
+    \end{myresult}
+
+    \begin{respf}
+        #3
+    \end{respf}
+}
+
+\NewDocumentCommand{\respfr}{mm+m+m}{
+    \begin{myresult}{#1}{#2}
+        #3
+    \end{myresult}
+
+    \begin{respf}
+        #4
+    \end{respf}
+}
+
+%-------------------------------Notations---------------------------------
+% Note
+\newenvironment{note}{
+    {\noindent{\it \textbf{Note.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{blue!20!white}]
+}{
+    \textcolor{blue!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\nt}{+m}{
+    \begin{note}
+        #1
+    \end{note}
+}

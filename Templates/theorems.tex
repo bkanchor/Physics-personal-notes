@@ -1,0 +1,426 @@
+% Theorem System
+% The following boxes are provided:
+%   Definition:     \defn 
+%   Theorem:        \thm 
+%   Principle:      \pr
+%   Result:         \res
+%   Corollary:      \cor
+%   Proposition:    \prop   
+%   Claim:          \clm
+%   Fact:           \fact
+%   Proof:          \pf
+%   Example:        \ex
+%   Note:           \nt
+%   Notation:       \ntn
+%   Terminalogy:    \tmg
+%   Remark:         \rmk (sentence), \rmkb (block)
+% Suffix
+%   r:              Allow Theorem/Definition to be referenced, e.g. thmr
+%   p:              Add a short proof block for Lemma, Corollary, Proposition or Claim, e.g. lemp
+%                   For theorems, use \pf for proof blocks
+
+% Definition
+\newtcbtheorem[number within=section]{mydefinition}{Definition}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=red!20!white,
+    colback=red!10!white,
+}{defn}
+
+\NewDocumentCommand{\defn}{m+m}{
+    \begin{mydefinition}{#1}{}
+        #2
+    \end{mydefinition}
+}
+
+\NewDocumentCommand{\defnr}{mm+m}{
+    \begin{mydefinition}{#1}{#2}
+        #3
+    \end{mydefinition}
+}
+
+% Theorem
+\newtcbtheorem[use counter from=mydefinition]{mytheorem}{Theorem}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=cyan!20!white,
+    colback=cyan!10!white,
+}{thm}
+
+\NewDocumentCommand{\thm}{m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+}
+
+\NewDocumentCommand{\thmr}{mm+m}{
+    \begin{mytheorem}{#1}{#2}
+        #3
+    \end{mytheorem}
+}
+
+% Principle
+\newtcbtheorem[use counter from=mydefinition]{myprinciple}{Principle}
+{
+    enhanced,
+    %breakable,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=green!20!white,
+    colback=green!10!white,
+}{pr}
+
+\NewDocumentCommand{\pr}{m+m}{
+    \begin{myprinciple}{#1}{}
+        #2
+    \end{myprinciple}
+}
+
+% Result
+\newtcbtheorem[use counter from=mydefinition]{myresult}{Result}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=blue!20!white,
+    colback=blue!10!white,
+}{res}
+
+\NewDocumentCommand{\res}{m+m}{
+    \begin{myresult}{#1}{}
+        #2
+    \end{myresult}
+}
+
+\newenvironment{respf}{
+    {\noindent{\it \textbf{Solution.}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{blue!20!white}]
+}{
+    \textcolor{blue!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\resp}{m+m+m}{
+    \begin{myresult}{#1}{}
+        #2
+    \end{myresult}
+
+    \begin{respf}
+        #3
+    \end{respf}
+}
+
+% Corollary
+\newtcbtheorem[use counter from=mydefinition]{mycorollary}{Corollary}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=orange!20!white,
+    colback=orange!10!white,
+}{cor}
+
+\NewDocumentCommand{\cor}{+m}{
+    \begin{mycorollary}{}{}
+        #1
+    \end{mycorollary}
+}
+
+\newenvironment{corpf}{
+	{\noindent{\it \textbf{Proof for Corollary.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{orange!20!white}]
+}{
+    \textcolor{orange!20!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\corp}{m+m+m}{
+    \begin{mycorollary}{}{}
+        #1
+    \end{mycorollary}
+
+    \begin{corpf}
+        #2
+    \end{corpf}
+}
+
+% Proposition
+\newtcbtheorem[use counter from=mydefinition]{myproposition}{Proposition}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=yellow!30!white,
+    colback=yellow!20!white,
+}{prop}
+
+\NewDocumentCommand{\prop}{+m}{
+    \begin{myproposition}{}{}
+        #1
+    \end{myproposition}
+}
+
+\newenvironment{proppf}{
+	{\noindent{\it \textbf{Proof for Proposition.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{yellow!30!white}]
+}{
+    \textcolor{yellow!30!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\propp}{+m+m}{
+    \begin{myproposition}{}{}
+        #1
+    \end{myproposition}
+
+    \begin{proppf}
+        #2
+    \end{proppf}
+}
+
+% Claim
+\newtcbtheorem[use counter from=mydefinition]{myclaim}{Claim}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=pink!30!white,
+    colback=pink!20!white,
+}{clm}
+
+
+\NewDocumentCommand{\clm}{m+m}{
+    \begin{myclaim*}{#1}{}
+        #2
+    \end{myclaim*}
+}
+
+\newenvironment{clmpf}{
+	{\noindent{\it \textbf{Proof for Claim.}}}
+	\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+    before upper={\parindent15pt},
+    after skip=10pt,
+	borderline west={1mm}{0pt}{pink!30!white}]
+}{
+    \textcolor{pink!30!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\clmp}{m+m+m}{
+    \begin{myclaim*}{#1}{}
+        #2
+    \end{myclaim*}
+
+    \begin{clmpf}
+        #3
+    \end{clmpf}
+}
+
+% Fact
+\newtcbtheorem[use counter from=mydefinition]{myfact}{Fact}
+{
+    enhanced,
+    frame hidden,
+    titlerule=0mm,
+    toptitle=1mm,
+    bottomtitle=1mm,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=purple!20!white,
+    colback=purple!10!white,
+}{fact}
+
+\NewDocumentCommand{\fact}{+m}{
+    \begin{myfact}{}{}
+        #1
+    \end{myfact}
+}
+
+
+% Proof
+\NewDocumentCommand{\pf}{+m}{
+    \begin{proof}
+        [\noindent\textbf{Proof.}]
+        #1
+    \end{proof}
+}
+
+% Example
+% \newenvironment{example}{%
+% \par
+%     \vspace{5pt}
+% 	\begin{minipage}{\dimexpr\textwidth-7mm\relax}
+% 		\noindent\textbf{Example.}
+% 		\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+% 	    before upper={\parindent15pt},
+% 	    after skip=10pt,
+% 		borderline west={1mm}{0pt}{cyan!10!white}]
+% }{%
+% 		\endtcolorbox
+% 	\end{minipage}
+%     \vspace{5pt}
+% }
+% 
+% \NewDocumentCommand{\ex}{+m}{
+%     \begin{example}
+%         #1
+%     \end{example}
+% }
+
+% Example with counter
+
+% --- in the preamble (before \begin{document}) ---
+\newcounter{example}[chapter]
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+
+\newenvironment{example}{
+    \refstepcounter{example}%
+    {\noindent{\it \textbf{Example \theexample}}}
+    \tcolorbox[blanker, breakable, left=5mm, right=1mm, parbox=false,
+        before upper={\parindent15pt},
+        after skip=10pt,
+        borderline west={1mm}{0pt}{red!10!white}]
+}{
+    \textcolor{red!10!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\ex}{+m}{
+    \begin{example}
+        #1
+    \end{example}
+}
+
+% Note
+\newenvironment{Note}{%
+    \par
+    \vspace{5pt}
+	\begin{minipage}{\dimexpr\textwidth-7mm\relax}
+		\noindent\textbf{Note.}
+		\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+        before upper={\parindent15pt},
+        %before upper={\setlength{\leftskip}{15pt}},
+	    after skip=10pt,
+		borderline west={1mm}{0pt}{green!10!white}]
+}{%
+		\endtcolorbox
+	\end{minipage}
+    \vspace{5pt}
+}
+
+\NewDocumentCommand{\nt}{+m}{
+    \begin{Note}
+        #1
+    \end{Note}
+}
+
+% Terminology
+\newenvironment{Terminology}{%
+    \par
+    \vspace{5pt}
+	\begin{minipage}{\dimexpr\textwidth-7mm\relax}
+		\noindent\textbf{Terminology.}
+		\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+	    before upper={\parindent15pt},
+	    after skip=10pt,
+		borderline west={1mm}{0pt}{red!10!white}]
+}{%
+		\endtcolorbox
+	\end{minipage}
+    \vspace{5pt}
+}
+
+\NewDocumentCommand{\tmg}{+m}{
+    \begin{Terminology}
+        #1
+    \end{Terminology}
+}
+
+% Notation
+\newenvironment{Notation}{%
+    \par
+    \vspace{5pt}
+	\begin{minipage}{\dimexpr\textwidth-7mm\relax}
+		\noindent\textbf{Notation.}
+		\tcolorbox[blanker,breakable,left=5mm,parbox=false,
+	    before upper={\parindent15pt},
+	    after skip=10pt,
+		borderline west={1mm}{0pt}{red!10!white}]
+}{%
+		\endtcolorbox
+	\end{minipage}
+    \vspace{5pt}
+}
+
+\NewDocumentCommand{\ntn}{+m}{
+    \begin{Notation}
+        #1
+    \end{Notation}
+}
+
+% Remark
+\NewDocumentCommand{\rmk}{+m}{
+    {\it \color{blue!50!white}#1}
+}
+
+\newenvironment{remark}{
+    \par
+    \vspace{5pt}
+    \begin{minipage}{\dimexpr\textwidth-7mm\relax}
+        {\par\noindent{\textbf{Remark.}}}
+        \tcolorbox[blanker,breakable,left=5mm,
+        before skip=10pt,after skip=10pt,
+        borderline west={1mm}{0pt}{cyan!10!white}]
+}{
+        \endtcolorbox
+    \end{minipage}
+    \vspace{5pt}
+}
+
+\NewDocumentCommand{\rmkb}{+m}{
+    \begin{remark}
+        #1
+    \end{remark}
+}
+

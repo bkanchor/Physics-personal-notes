@@ -1,0 +1,323 @@
+\documentclass[oneside,10pt]{book}
+
+%-------------Chinese fonts and packages----------------
+\usepackage{fontspec}
+\usepackage{xeCJK}          % CJK support for XeLaTeX
+
+\setCJKmainfont{Libian SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{STFangsong}
+%-------------------------------------------------------
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{environ}
+\usepackage{tcolorbox}
+\usepackage{mathtools}
+\usepackage{svg}
+
+\tcbuselibrary{theorems,skins,breakable}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=7.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
+
+% Variables
+\def\notetitle{An Example for Physics Notes}
+\def\noteauthor{
+    \textbf{Baikang Guo} \\ 
+    %{\LaTeX} by Joe\\
+    %University
+    }
+\def\notedate{2026 Winter}
+
+% The theorem system and user-defined commands
+\input{statements.tex}
+\input{commands.tex}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+\title{\textbf{
+    \LARGE{\notetitle} \vspace*{10\baselineskip}}
+    }
+\author{\noteauthor}
+\date{\notedate}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\chapter{Introduction}
+\begin{flushright}
+    蓮華峯下鎖雕梁，此去瑤池地共長。\\
+    好爲麻姑到東海，勸栽黃竹莫栽桑。
+\end{flushright}
+
+\section{Rules of Naming Statements in Physics in Physics Notes}
+
+In this notes, for naming and explaining commonly used terms in physics, such as XX law, XX phenomenon, XX basic physical scenario, etc., the following classifications are used:
+\begin{enumerate}
+    \item Postulate
+    \item Terminology
+    \item Principle
+    \item Fact
+    \item Result    
+\end{enumerate}
+Meanwhile, for mathematical statements, the following naming rules are used:
+\begin{enumerate}
+    \item Axiom
+    \item Definition
+    \item Theorem
+    \item Proposition
+    \item Lemma
+    \item Corollary
+    \item Conjecture
+\end{enumerate}
+
+\section{Conventional Rules of Naming Statements in Mathematics}
+\subsection{Axiom}
+An axiom or postulate is a fundamental assumption regarding the object of study, that is accepted without proof. A related concept is that of a definition, which gives the meaning of a word or a phrase in terms of known concepts. 
+
+\subsection{Definition}
+A definition gives the meaning of a word or a phrase in terms of known concepts.
+
+\subsection{Theorem}
+A theorem is a statement that has been proven to be true based on axioms or definitions, and other theorems.
+
+\subsection{Proposition}
+A proposition is a theorem of lesser importance, or one that is considered so elementary or immediately obvious, that it may be stated without proof.
+
+\subsection{Lemma}
+A lemma is an "accessory proposition"--a proposition with little applicability outside its use in a particular proof. Over time a lemma may gain in importance and be considered a theorem, though the term "lemma" is usually kept as part of its name.
+
+\subsection{Corollary}
+A corollary is a proposition that follows immediately from another theorem or axiom, with little or no required proof. A corollary may also be a restatement of a theorem in a simpler form, or for a special case.
+
+\subsection{Conjecture}
+A conjecture is a proposition that is suspected to be true based on empirical evidence or heuristic arguments, but has not been proven.
+
+\section{Rules (personal) of Naming Statements in Physics}
+\subsection{Postulate}
+Postulates are used in physics notes in a way that corresponds to the use of Axioms in mathematics; for example, "The Five Postulates of Quantum Mechanics".
+
+\subsection{Terminology}
+Terminology is used in physics notes in a way that corresponds to the use of Definition in mathematics; any definition of physical terms should be given using Terminology, which is different from the use of Definition in mathematics.
+
+\subsection{Principle}
+Principle is used in physics notes in a way that corresponds to the use of Theorem in mathematics; any fundamental principle that is widely used for calculations of physical quantities should be listed under Principle. However, unlike Theorem in mathematics, the physical conclusions of Principle should basically come from the summary of experimental results, and generally do not require proof; in contrast, Theorem can come directly or indirectly from the proof of Definition.
+
+For example, "Maxwell's Equations" should be listed under Principle; "Continuity Equation" should be listed under Principle.
+
+\subsection{Fact}
+ Fact is used in physics notes in a way that corresponds to the use of Proposition, Lemma, or Corollary in mathematics: (analogous to Lemma) it can be derived from a Principle, and is usually an intermediate conclusion that is not often directly applied to the calculation of physical quantities; or (analogous to Proposition) the conclusion can also come from the summary of experiments, but it is not as widely used as Principle, and can be derived from Principle; or (analogous to Corollary) it can be quickly derived from Principle and should be listed under Fact.
+
+ For example, "The Matching Condition of Potentials" should be listed under Fact, while "The Matching Condition of Fields" has been listed under Principle.
+
+ \subsection{Result}
+Results is used in physics notes to list the specific physical quantities (functions) of specific physical scenarios; for example, the electric field of a hollow sphere with uniformly distributed charge should be listed under Results.
+
+
+% ------------------------------------------------------------------------------
+% PART I
+% ------------------------------------------------------------------------------
+\chapter*{Part I: Examples}
+\addcontentsline{toc}{chapter}{Part I: Examples}
+
+
+% ------------------------------------------------------------------------------
+% Chapter 2
+% ------------------------------------------------------------------------------
+\chapter{Examples of Statement Boxes}
+\begin{flushright}
+    相见时难别亦难，东风无力百花残。\\
+    春蚕到死丝方尽，蜡炬成灰泪始干。
+\end{flushright}
+
+\section{Mathematical Statements Boxes}
+\subsection{Axiom}
+\axiomr{This is an axiom}{this-is-an-axiom-label}{
+    this is the statement of the axiom.
+}
+I can refer to the above axiom as \ref{axiom:this-is-an-axiom-label}
+
+\subsection{Definition}
+\defnr{This is a definition}{this-is-a-definition-label}{
+    this is the statement of the definition.
+}
+I can refer to the above definition as \ref{defn:this-is-a-definition-label}.
+
+\subsection{Theorem}
+\thmr{This is a theorem}{this-is-a-theorem-label}{
+    this is the statement of the theorem.
+}
+I can refer to the above theorem as \ref{thm:this-is-a-theorem-label}.
+
+\thmpfr{This is a theorem with proof}{this-is-a-theorem-with-proof-label}{
+    This is the statement of the theorem with proof.
+}{
+    This is the proof of the theorem with proof.
+}
+I can refer to the above theorem with proof as \ref{thm:this-is-a-theorem-with-proof-label}.    
+
+\subsection{Proposition}
+\propr{This is a proposition}{this-is-a-proposition-label}{
+    this is the statement of the proposition.
+}
+I can refer to the above proposition as \ref{prop:this-is-a-proposition-label}.
+
+\proppfr{This is a proposition with proof}{this-is-a-proposition-with-proof-label}{
+    This is the statement of the proposition with proof.
+}{
+    This is the proof of the proposition with proof.
+}
+I can refer to the above proposition with proof as \ref{prop:this-is-a-proposition-with-proof-label}.
+
+\subsection{Lemma}
+\lemr{This is a lemma}{this-is-a-lemma-label}{
+    this is the statement of the lemma.
+}
+I can refer to the above lemma as \ref{lem:this-is-a-lemma-label}.
+
+\lempfr{This is a lemma with proof}{this-is-a-lemma-with-proof-label}{
+    This is the statement of the lemma with proof.
+}{
+    This is the proof of the lemma with proof.
+}
+I can refer to the above lemma with proof as \ref{lem:this-is-a-lemma-with-proof-label}.
+
+\subsection{Corollary}
+\corr{This is a corollary}{this-is-a-corollary-label}{
+    this is the statement of the corollary.
+}
+I can refer to the above corollary as \ref{cor:this-is-a-corollary-label}.
+
+\corpfr{This is a corollary with proof}{this-is-a-corollary-with-proof-label}{
+    This is the statement of the corollary with proof.
+}{
+    This is the proof of the corollary with proof.
+}
+I can refer to the above corollary with proof as \ref{cor:this-is-a-corollary-with-proof-label}.
+
+\subsection{Conjecture}
+\conjr{This is a conjecture}{this-is-a-conjecture-label}{
+    this is the statement of the conjecture.
+}
+I can refer to the above conjecture as \ref{conj:this-is-a-conjecture-label}.
+
+\section{Physics Statements Boxes}
+
+\subsection{Postulates}
+\postr{This is a postulate}{this-is-a-postulate-label}{
+    this is the statement of the postulate.
+}
+I can refer to the above postulate as \ref{post:this-is-a-postulate-label}.
+
+\subsection{Terminology}
+\tmgr{This is terminology}{this-is-terminology-label}{
+    this is the statement of the terminology.
+}
+
+I can refer to the above terminology as \ref{tmg:this-is-terminology-label}.
+
+\subsection{Principle}
+\prr{This is a principle}{this-is-a-principle-label}{
+    this is the statement of the principle.
+}
+I can refer to the above principle as \ref{pr:this-is-a-principle-label}.
+
+\subsection{Fact}
+\factr{This is a fact}{this-is-a-fact-label}{
+    this is the statement of the fact.
+}
+I can refer to the above fact as \ref{fact:this-is-a-fact-label}.
+
+\factpfr{This is a fact with proof}{this-is-a-fact-with-proof-label}{
+    This is the statement of the fact with proof.
+}{
+    This is the proof of the fact with proof.
+}
+I can refer to the above fact with proof as \ref{fact:this-is-a-fact-with-proof-label}.
+
+\subsection{Result}
+\respfr{This is a result}{this-is-a-result-label}{
+    This is the statement of the result.
+}{
+    This is the proof of the result.
+}
+I can refer to the above result as \ref{res:this-is-a-result-label}.
+
+\chapter{Inserting Images}
+
+\section{Inserting .svg Images}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=0.5\textwidth, inkscapelatex=false]{img/svg/Standard-Model-of-Elementary-Particles.svg}
+    \caption{Standard Model of Elementary Particles}
+    \label{fig:standard-model-label}
+\end{figure}
+I can refer to the above figure as \ref{fig:standard-model-label}.
+
+\begin{figure}[H]
+    \centering
+    % Row 1
+    \begin{subfigure}{0.45\textwidth}
+        \includesvg[width=\linewidth]{img/svg/Kugelkoord-lokb-e.svg}
+        \caption{Spherical Coordinate}
+        \label{fig:spherical-coordinate-label}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \includesvg[width=\linewidth]{img/svg/Legendrepolynomials6.svg}
+        \caption{Legendre Polynomials}
+        \label{fig:legendre-polynomials-label}
+    \end{subfigure}
+
+    \vspace{0.5cm} % vertical space between rows
+
+    % Row 2
+    \begin{subfigure}{0.45\textwidth}
+        \includesvg[width=\linewidth]{img/svg/Sphericalfunctions.svg}
+        \caption{Spherical Functions}
+        \label{fig:spherical-functions-label}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \includesvg[width=\linewidth]{img/svg/Spherical_harmonics_positive_negative.svg}
+        \caption{Spherical Harmonics Positive and Negative}
+        \label{fig:spherical-harmonics-positive-negative-label}
+    \end{subfigure}
+
+    \caption{Overall figure caption}
+    \label{fig:2x2grid}
+\end{figure}
+
+I can refer to the above figure as \ref{fig:2x2grid}, and I can refer to the subfigures as \ref{fig:spherical-coordinate-label}, \ref{fig:legendre-polynomials-label}, \ref{fig:spherical-functions-label}, and \ref{fig:spherical-harmonics-positive-negative-label}.
+
+
+
+
+\end{document}

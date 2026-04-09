@@ -1,0 +1,35 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Rules of Naming Statements in Physics in Physics Notes}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Conventional Rules of Naming Statements in Mathematics}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Axiom}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Definition}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Theorem}{4}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Proposition}{4}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Lemma}{4}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Corollary}{4}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Conjecture}{4}{subsection.1.2.7}%
+\contentsline {section}{\numberline {1.3}Rules (personal) of Naming Statements in Physics}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Postulate}{4}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Terminology}{4}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Principle}{4}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Fact}{5}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Result}{5}{subsection.1.3.5}%
+\contentsline {chapter}{Part I: Examples}{6}{chapter*.2}%
+\contentsline {chapter}{\numberline {2}Examples of Statement Boxes}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Mathematical Statements Boxes}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Axiom}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Definition}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Theorem}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Proposition}{8}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Lemma}{8}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Corollary}{8}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Conjecture}{9}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Physics Statements Boxes}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Postulates}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Terminology}{9}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Principle}{9}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Fact}{9}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Result}{10}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}Inserting Images}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Inserting .svg Images}{11}{section.3.1}%
